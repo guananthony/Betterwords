@@ -1,63 +1,83 @@
-// traverse dom and replace trigger words with nice words
+// store initial HTML
+const initialHTML = document.body.innerHTML;
+console.log('INITIATED');
 
-// var all = document.getElementsByTagName("*");
+// make slider on page, position through CSS in top-right
+// const slider = document.createElement('button');
+// slider.innerText = 'Replace Words';
+// slider['id'] = 'toggleButton';
+// slider.style.position = 'fixed';
+// slider.style.top = '10px';
+// slider.style.right = '10px';
+// console.log(slider);
 
-// for (var i=0, max=all.length; i < max; i++) {
-//      // Do something with the element here
-// }
+// TODO: toggle between states
+const toggleButton = document.createElement('button');
+toggleButton['id'] = 'toggleButton';
+toggleButton['class'] = 'off';
+toggleButton.innerText = 'Reverse Words';
 
-document.addEventListener('DOMContentLoaded', () => {
-	console.log('REPLACED');
+// const toggleButton = document.createElement('label');
+// toggleButton['class'] = 'slider';
+// toggleButton.innerText = 'Reverse Words';
+// toggleButton.innerHTML = `<input type="checkbox" id="toggle" />`;
+document.body.appendChild(toggleButton);
+console.log(toggleButton);
+toggleButton.addEventListener('click', () => {
+	toggleButton.setAttribute('class', 'off');
 });
 
-// const contents = $('#contents');
-// const contentsParent = contents.parent();
-// contents.remove();
+const replaceWords = () => {
+	console.log('REPLACED');
+	let triggerWords = [
+		'omicron',
+		'inflation',
+		'covid',
+		'death',
+		'war',
+		'stocks',
+		'trillion',
+		'deficit',
+		'debt',
+		'guns',
+		'alarms',
+		'politics',
+		'court',
+		'biden',
+		'republican',
+		'democrat',
+		'senate',
+		'business',
+		'elections',
+		'fed',
+		'hike',
+		'news',
+		'conservatives',
+	];
+	let niceWords = [
+		'rainbows',
+		'butterflies',
+		'sunshine',
+		'dessert',
+		'sugar',
+		'babies',
+		'beautiful',
+	];
+	let replacementHTML = document.body.innerHTML;
+	for (let i = 0; i < triggerWords.length; i++) {
+		let randIndex = Math.floor(Math.random() * niceWords.length);
+		let triggerRegEx = new RegExp(triggerWords[i], 'gi');
+		console.log(triggerRegEx);
+		replacementHTML = replacementHTML.replace(
+			triggerRegEx,
+			`<b>${niceWords[randIndex].toUpperCase()}</b>`
+		);
+	}
+	console.log(replacementHTML);
 
-// function randomNumber(min, max) {
-// 	return Math.floor(Math.random() * (max - min) + min);
-// }
+	document.body.innerHTML = replacementHTML;
+};
 
-// function handleData(imageData) {
-// 	return imageData.urls.regular;
-// }
-
-// contentsParent.append(
-// 	'<div class="focus-div"><h1 class="coloredText">Quit goofing off and get back to work.</h1></div>'
-// );
-
-// $.get(
-// 	'https://api.unsplash.com/photos/random/?client_id=x8cyBFMNkUmoQsmnCY4Gzkj6ulGBOVI5EUvOQgqIfzc',
-// 	function (data) {
-// 		contentsParent.append(
-// 			`<div class="randomPhotoContainer"><img id="randomPhoto" src=${data.urls.regular}' alt="random Unsplash photo"></div>`
-// 		);
-// 		$('#randomPhoto').click(function () {
-// 			console.log('clicked');
-// 			$.get(
-// 				'https://api.unsplash.com/photos/random/?client_id=x8cyBFMNkUmoQsmnCY4Gzkj6ulGBOVI5EUvOQgqIfzc',
-// 				function (data) {
-// 					$('#randomPhoto').attr('src', data.urls.regular);
-// 				}
-// 			);
-// 		});
-// 	}
-// );
-
-// $.ajax({
-// 	method: 'GET',
-// 	url: 'https://picsum.photos/list',
-// 	success: function (result) {
-// 		console.log(result.length);
-// 	},
-// 	error: function (err) {
-// 		console.log(err);
-// 	},
-// });
-
-// const icon = document.getElementById('logo-icon');
-// icon.parentNode.removeChild(icon);
-
-// const avatar = document.querySelector('[alt="Avatar image"]');
-// avatar.parentNode.appendChild(document.createElement('p'));
-// avatar.parentNode.removeChild(avatar);
+const putWordsBack = () => {
+	document.body.innerHTML = initialHTML;
+};
