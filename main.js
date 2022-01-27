@@ -6,6 +6,8 @@ console.log('INITIATED');
 // try this out on Drudger and NYtimes, most headlines are anchors
 // elementList is a nodeList of anchor tags that we can iterate through
 const elementList = document.querySelectorAll('a');
+const imageList = document.querySelectorAll('img');
+console.log(imageList);
 
 // make slider on page, position through CSS in top-right
 // const slider = document.createElement('button');
@@ -193,6 +195,11 @@ const replaceWordsAlternate = () => {
 		}
 		element.innerHTML = replacementHTML;
 	});
+	// change all images.. not working lol
+	// imageList.forEach((image) => {
+	// 	image.src =
+	// 		'https://gamepress.gg/pokemonmasters/sites/pokemonmasters/files/styles/300h/public/2020-07/pm0039_00_purin_256.ktx_.png?itok=Xgx6SSkk';
+	// });
 	// trying a CSS animation
 	const cssBubbles = document.createElement('div');
 	cssBubbles['id'] = 'background-wrap';
