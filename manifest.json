@@ -11,12 +11,12 @@
 	"action": {
 		"default_icon": "google_alerts.png",
 		"default_popup": "popup.html",
-		"default_title": "My custom Google Chrome extension"
+		"default_title": "Coddle"
 	},
 	"content_scripts": [
 		{
-			"matches": ["https://www.drudgereport.com/*"],
-			"js": ["jquery.min.js", "./main.js"],
+			"matches": ["https://*/*"],
+			"js": ["main.js"],
 			"css": ["index.css"]
 		}
 	]

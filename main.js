@@ -1,36 +1,48 @@
-const contents = $('#contents');
-const contentsParent = contents.parent();
-contents.remove();
+// traverse dom and replace trigger words with nice words
 
-function randomNumber(min, max) {
-	return Math.floor(Math.random() * (max - min) + min);
-}
+// var all = document.getElementsByTagName("*");
 
-function handleData(imageData) {
-	return imageData.urls.regular;
-}
+// for (var i=0, max=all.length; i < max; i++) {
+//      // Do something with the element here
+// }
 
-contentsParent.append(
-	'<div class="focus-div"><h1 class="coloredText">Quit goofing off and get back to work.</h1></div>'
-);
+document.addEventListener('DOMContentLoaded', () => {
+	console.log('REPLACED');
+});
 
-$.get(
-	'https://api.unsplash.com/photos/random/?client_id=x8cyBFMNkUmoQsmnCY4Gzkj6ulGBOVI5EUvOQgqIfzc',
-	function (data) {
-		contentsParent.append(
-			`<div class="randomPhotoContainer"><img id="randomPhoto" src=${data.urls.regular}' alt="random Unsplash photo"></div>`
-		);
-		$('#randomPhoto').click(function () {
-			console.log('clicked');
-			$.get(
-				'https://api.unsplash.com/photos/random/?client_id=x8cyBFMNkUmoQsmnCY4Gzkj6ulGBOVI5EUvOQgqIfzc',
-				function (data) {
-					$('#randomPhoto').attr('src', data.urls.regular);
-				}
-			);
-		});
-	}
-);
+// const contents = $('#contents');
+// const contentsParent = contents.parent();
+// contents.remove();
+
+// function randomNumber(min, max) {
+// 	return Math.floor(Math.random() * (max - min) + min);
+// }
+
+// function handleData(imageData) {
+// 	return imageData.urls.regular;
+// }
+
+// contentsParent.append(
+// 	'<div class="focus-div"><h1 class="coloredText">Quit goofing off and get back to work.</h1></div>'
+// );
+
+// $.get(
+// 	'https://api.unsplash.com/photos/random/?client_id=x8cyBFMNkUmoQsmnCY4Gzkj6ulGBOVI5EUvOQgqIfzc',
+// 	function (data) {
+// 		contentsParent.append(
+// 			`<div class="randomPhotoContainer"><img id="randomPhoto" src=${data.urls.regular}' alt="random Unsplash photo"></div>`
+// 		);
+// 		$('#randomPhoto').click(function () {
+// 			console.log('clicked');
+// 			$.get(
+// 				'https://api.unsplash.com/photos/random/?client_id=x8cyBFMNkUmoQsmnCY4Gzkj6ulGBOVI5EUvOQgqIfzc',
+// 				function (data) {
+// 					$('#randomPhoto').attr('src', data.urls.regular);
+// 				}
+// 			);
+// 		});
+// 	}
+// );
 
 // $.ajax({
 // 	method: 'GET',
