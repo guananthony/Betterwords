@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Focus",
+  "version": "1.0",
+  "description": "Coding out a lil project for Codesmith/CSX.",
+  "icons": {
+    "16": "google_alerts.png",
+    "48": "google_alerts.png",
+    "128": "google_alerts.png"
+  },
+  "action": {
+    "default_icon": "google_alerts.png",
+    "default_popup": "popup.html",
+    "default_title": "My custom Google Chrome extension"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["jquery.min.js", "./main.js"],
+      "css": ["index.css"]
+    }
+  ]
+}

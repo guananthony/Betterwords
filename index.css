@@ -1,0 +1,29 @@
+.focus-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.coloredText {
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+img {
+  border: none;
+  border-radius: 20px;
+  width: 80%;
+}
+
+.randomPhotoContainer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#randomPhoto {
+  cursor: pointer;
+}
