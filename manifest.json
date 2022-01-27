@@ -4,12 +4,12 @@
 	"version": "1.0",
 	"description": "Replace common trigger words with nice words instead.",
 	"icons": {
-		"16": "google_alerts.png",
-		"48": "google_alerts.png",
-		"128": "google_alerts.png"
+		"16": "baby.png",
+		"48": "baby.png",
+		"128": "baby.png"
 	},
 	"action": {
-		"default_icon": "google_alerts.png",
+		"default_icon": "baby.png",
 		"default_popup": "popup.html",
 		"default_title": "Coddle"
 	},

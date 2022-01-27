@@ -195,12 +195,28 @@ const replaceWordsAlternate = () => {
 		}
 		element.innerHTML = replacementHTML;
 	});
-	// change all images.. not working lol
+	// CHANGE ALL IMAGES TO JIGGLYPUFF.. not working lol
 	// imageList.forEach((image) => {
 	// 	image.src =
 	// 		'https://gamepress.gg/pokemonmasters/sites/pokemonmasters/files/styles/300h/public/2020-07/pm0039_00_purin_256.ktx_.png?itok=Xgx6SSkk';
 	// });
-	// trying a CSS animation
+	// FETCH A RANDOM FAMOUS QUOTE AND DISPLAY IT
+	fetch('https://quotes15.p.rapidapi.com/quotes/random/', {
+		method: 'GET',
+		headers: {
+			'x-rapidapi-host': 'quotes15.p.rapidapi.com',
+			'x-rapidapi-key': '2a9eee72a4msh645b8436f2dd348p129521jsn2232b805f1a3',
+		},
+	})
+		.then((data) => data.json())
+		.then((data) => {
+			console.log(data.content);
+			const randomTitle = document.createElement('h1');
+			randomTitle['id'] = 'randomTitle';
+			randomTitle.innerText = data.content;
+			document.body.appendChild(randomTitle);
+		});
+	// CSS ANIMATION
 	const cssBubbles = document.createElement('div');
 	cssBubbles['id'] = 'background-wrap';
 	cssBubbles.innerHTML = `<div class="bubble x1"></div>
