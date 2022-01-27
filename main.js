@@ -155,6 +155,10 @@ const replaceWordsAlternate = () => {
 		'conservatives',
 		'kill',
 		'damage',
+		'coronavirus',
+		'pandemic',
+		'harm',
+		'military',
 	];
 	let niceWords = [
 		'rainbows',
@@ -167,6 +171,10 @@ const replaceWordsAlternate = () => {
 		'fluff',
 		'giggle',
 		'Marshawn Lynch',
+		'spice',
+		'everything nice',
+		'Gerber',
+		'lullaby',
 	];
 
 	let colors = [
@@ -190,7 +198,7 @@ const replaceWordsAlternate = () => {
 				triggerRegEx,
 				`<span style="color:${
 					colors[anotherRandIndex]
-				};font-size:36px;">${niceWords[randIndex].toUpperCase()}</span>`
+				};font-size:28px;">${niceWords[randIndex].toUpperCase()}</span>`
 			);
 		}
 		element.innerHTML = replacementHTML;
@@ -211,10 +219,10 @@ const replaceWordsAlternate = () => {
 		.then((data) => data.json())
 		.then((data) => {
 			console.log(data.content);
-			const randomTitle = document.createElement('h1');
-			randomTitle['id'] = 'randomTitle';
-			randomTitle.innerText = data.content;
-			document.body.appendChild(randomTitle);
+			const randomQuote = document.createElement('div');
+			randomQuote['id'] = 'randomQuoteContainer';
+			randomQuote.innerHTML = `<p id="randomQuote">HERE'S A RANDOM QUOTE TO CHEER YOU UP:<br><br>${data.content}</p>`;
+			document.body.appendChild(randomQuote);
 		});
 	// CSS ANIMATION
 	const cssBubbles = document.createElement('div');
@@ -237,4 +245,6 @@ const putWordsBack = () => {
 	document.body.innerHTML = initialHTML;
 	// because of the CSS animation
 	document.body.style.background = 'white';
+	// workaround: refresh the page to reset the buttons
+	location.reload();
 };
