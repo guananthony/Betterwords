@@ -52,8 +52,8 @@
 /* RANDOM FAMOUS QUOTE */
 #randomQuoteContainer {
 	position: fixed;
-	top: 100px;
-	left: 100px;
+	top: 50px;
+	left: 50px;
 	min-height: 100px;
 	width: 400px;
 	background-color: white;
@@ -399,7 +399,7 @@
 		rgba(255, 255, 255, 0.5) 0%,
 		rgba(255, 255, 255, 0) 70%
 	); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#50ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;

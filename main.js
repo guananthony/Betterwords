@@ -159,6 +159,17 @@ const replaceWordsAlternate = () => {
 		'pandemic',
 		'harm',
 		'military',
+		'shot',
+		'fatal',
+		'mask',
+		'gun',
+		'abuse',
+		'hit',
+		'kidnapping',
+		'fire',
+		'trump',
+		'desantis',
+		'suicide',
 	];
 	let niceWords = [
 		'rainbows',
@@ -221,7 +232,7 @@ const replaceWordsAlternate = () => {
 			console.log(data.content);
 			const randomQuote = document.createElement('div');
 			randomQuote['id'] = 'randomQuoteContainer';
-			randomQuote.innerHTML = `<p id="randomQuote">HERE'S A RANDOM QUOTE TO CHEER YOU UP:<br><br>${data.content}</p>`;
+			randomQuote.innerHTML = `<p id="randomQuote"><b>Here's a randomly generated quote to cheer you up:</b><br><br>${data.content}<br><br><i>- Powered by QuotePark.com</i></p>`;
 			document.body.appendChild(randomQuote);
 		});
 	// CSS ANIMATION
@@ -248,3 +259,7 @@ const putWordsBack = () => {
 	// workaround: refresh the page to reset the buttons
 	location.reload();
 };
+
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+	replaceWordsAlternate();
+});
